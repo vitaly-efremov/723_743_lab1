@@ -17,11 +17,9 @@
                 <tr>
                   <th>#</th>
                   <th>ФИО</th>
-                  <th>ТиМП</th>
-                  <th>ЭиС</th>
-                  <th>Философия</th>
-                  <th>Иностранный язык</th>
-                  <th>Физическая культура</th>
+                  {% for subj in subjects %}
+                    <th>{{subj}}</th>
+                  {% endfor %}
                   <th>Средний балл</th>
                 </tr>
                 </thead>
@@ -30,18 +28,23 @@
                         <tr>
                             <th scope="row">{{student.id}}</th>
                             <td>{{student.fio}}</td>
-                            <td>{{student.timp}}</td>
-                            <td>{{student.eis}}</td>
-                            <td>{{student.philosophy}}</td>
-                            <td>{{student.english}}</td>
-                            <td>{{student.sport}}</td>
+                            {% for mark in student.marks %}
+                                <td>{{mark}}</td>
+                            {% endfor %}
                             <td>{{student.average}}</td>
                         </tr>
                     {% endfor %}
+                <tr>
+                    <td></td>
+                    <td>Среднее</td>
+                    {% for avg in average_subj %}
+                        <td>{{avg}}</td>
+                    {% endfor %}
+                </tr>
                 </tbody>
             </table>
-            <h4>Отличники:{{excellent_students}}</h4>
-            <h4>Отчислить:{{bad_students}}</h4>
+            <h4>Отличники: {{excellent_students}}</h4>
+            <h4>Отчислить: {{bad_students}}</h4>
         </div>
 	</body>
 </html>
