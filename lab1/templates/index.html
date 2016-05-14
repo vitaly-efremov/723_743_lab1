@@ -9,9 +9,9 @@
 	</head>
 	<body>
         <div class="container">
-            <h1 style="text-align:center;">Лабораторная работа №1</h1>
+            <h1 style="text-align:center;">Лабороторная работа №1</h1>
 
-            <h2>Успеваемость студентов гр. 723</h2>
+            <h2>”Успеваемость студентов гр. 734</h2>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -23,25 +23,25 @@
                   <th>Иностранный язык</th>
                   <th>Физическая культура</th>
                   <th>Средний балл</th>
-                </tr>
+                  </tr>
                 </thead>
                 <tbody>
-                    {% for student in students_statistics %}
+                    {% for stdnts in students_statistics %}
                         <tr>
-                            <th scope="row">{{student.id}}</th>
-                            <td>{{student.fio}}</td>
-                            <td>{{student.timp}}</td>
-                            <td>{{student.eis}}</td>
-                            <td>{{student.philosophy}}</td>
-                            <td>{{student.english}}</td>
-                            <td>{{student.sport}}</td>
-                            <td>{{student.average}}</td>
+                            <th scope="row">{{stdnts.id}}</th>
+                            <td>{{stdnts.student}}</td>
+                            <td>{{stdnts.ТиМП}}</td>
+                            <td>{{stdnts.ЭиС}}</td>
+                            <td>{{stdnts.Философия}}</td>
+                            <td>{{stdnts.ИнЯз}}</td>
+                            <td>{{stdnts.Физра}}</td>
+                            <td>{{stdnts.Среднийбал}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <h4>Отличники:{{excellent_students}}</h4>
-            <h4>Отчислить:{{bad_students}}</h4>
+            <h4>Хорошисты:{{excellent_students}}</h4>
+            <h4>Плохие студенты:{{bad_students}}</h4>
         </div>
 	</body>
 </html>
